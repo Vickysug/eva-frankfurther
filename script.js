@@ -127,7 +127,9 @@ class VisualNovelScene extends Phaser.Scene {
             { text: "For the next six years, she earned her living working the evening shift as a counter-hand at Lyons Corner House and, later, in a sugar refinery.", image: 'background7' },
             { text: "Leaving herself free to paint during the day, she painted local immigrants.", image: 'background8' },
             { text: "Inspired by artists as diverse as Rembrandt, Käthe Kollwitz and Picasso, she took as her subject the ethnically diverse, largely immigrant population among whom she lived and worked.", image: 'background9' },
-            { text: "Between 1948 and 1958 Frankfurther also travelled extensively in Europe, writing lively and perceptive letters home about the art and people she encountered.", image: 'background10' }
+            { text: "Between 1948 and 1958 Frankfurther also travelled extensively in Europe, writing lively and perceptive letters home about the art and people she encountered.", image: 'background10' },
+            { text: "Eva Died in 1959 (age 29 years) in Paddington, London.", image: 'background11' }
+
         ];
         this.dialogIndex = 0;
         this.buttonCreated = false;
@@ -145,6 +147,7 @@ class VisualNovelScene extends Phaser.Scene {
         this.load.image('background8', 'https://play.rosebud.ai/assets/painting1.jpg?7v56');
         this.load.image('background9', 'https://play.rosebud.ai/assets/painting2.jpg?8gqP');
         this.load.image('background10', 'https://play.rosebud.ai/assets/Paris train station Black and white 1950.png?DvOZ');
+        this.load.image('background11', 'https://play.rosebud.ai/assets/eva.jpeg?1W5a');
         this.load.image('button', 'https://play.rosebud.ai/assets/restart_icon.png?oIlO');
         this.load.audio('backgroundMusic', 'https://play.rosebud.ai/assets/Into-the-Abyss.mp3?CSyl');
         this.load.image('startBackground', 'https://play.rosebud.ai/assets/eva.crop.jpg?k1BE');
