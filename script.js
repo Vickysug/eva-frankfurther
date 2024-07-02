@@ -3,14 +3,14 @@ class KitchenScene extends Phaser.Scene {
         super("KitchenScene");
 
         this.dialogs = [
-            "Rian enters the galley of the stranded ship...",
-            "The galley is bustling with activity as the crew prepares for another day.",
-            "Rian shares his plan with the right guards.",
-            "Fighting breaks loose and the loyal guards are subdued.",
-            "Kalis: Rian! We've done it! We've freed the avanc!",
-            "Rian: Aye, it was a grand success. Thank you, Kalis.",
-            "Rian joins his fellow rebel shipmates as the ship turns around.",
-            "Kalis: Now to enjoy a hearty meal as we rebuild peace!",
+            "Eva Frankfurther",
+            "Eva Frankfurther.",
+            "Eva Frankfurther.",
+            "Eva Frankfurther.",
+            "Eva Frankfurther!",
+            "Eva Frankfurther.",
+            "Eva Frankfurther.",
+            "Eva Frankfurther!",
             "...",
             "..."
         ];
@@ -19,7 +19,7 @@ class KitchenScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('kitchen', `https://play.rosebud.ai/assets/grungy_mess_hall_with_porthole.jpeg?C8RS`);
+        this.load.image('kitchen', `https://play.rosebud.ai/assets/art gallery.png?gjO3`);
         this.load.image('cook', `https://play.rosebud.ai/assets/painting1.jpg?7v56`);
     }
 
@@ -52,7 +52,7 @@ class KitchenScene extends Phaser.Scene {
     updateDialog() {
         this.text.setText(this.dialogs[this.dialogIndex]);
 
-        if (this.dialogs[this.dialogIndex] === "Kalis: Rian! We've done it! We've freed the avanc!") {
+        if (this.dialogs[this.dialogIndex] === "Eva . . .") {
             this.tweens.add({
                 targets: this.cook,
                 alpha: { from: 0, to: 1 },
@@ -102,14 +102,10 @@ class VisualNovelScene extends Phaser.Scene {
             { text: "Leaving herself free to paint during the day, she painted local immigrants.", image: 'background8' },
             { text: "Inspired by artists as diverse as Rembrandt, Käthe Kollwitz and Picasso, she took as her subject the ethnically diverse, largely immigrant population among whom she lived and worked.", image: 'background9' },
             { text: "Between 1948 and 1958 Frankfurther also travelled extensively in Europe, writing lively and perceptive letters home about the art and people she encountered.", image: 'background10' }
-        
-        
         ];
         this.dialogIndex = 0;
         this.buttonCreated = false;
-        this.teethBrushed = false;
         this.started = false;
-        this.bathroomTasksCompleted = false;
     }
 
     preload() {
@@ -123,9 +119,6 @@ class VisualNovelScene extends Phaser.Scene {
         this.load.image('background8', 'https://play.rosebud.ai/assets/painting1.jpg?7v56');
         this.load.image('background9', 'https://play.rosebud.ai/assets/painting2.jpg?8gqP');
         this.load.image('background10', 'https://play.rosebud.ai/assets/Paris train station Black and white 1950.png?DvOZ');
-
-
-        
         this.load.image('button', 'https://play.rosebud.ai/assets/restart_icon.png?oIlO');
         this.load.audio('backgroundMusic', 'https://play.rosebud.ai/assets/Into-the-Abyss.mp3?CSyl');
         this.load.image('startBackground', 'https://play.rosebud.ai/assets/eva.jpg?2h6X');
@@ -200,27 +193,9 @@ class VisualNovelScene extends Phaser.Scene {
 
     createButtons() {
         this.buttonCreated = true;
-        this.bathroomButtonBackground = this.add.rectangle(400, 300, 400, 60, 0x111111, 0.6);
-        this.bathroomButton = this.add.text(this.bathroomButtonBackground.x, this.bathroomButtonBackground.y,
-         'Learn more about Eva', {
-            fontSize: '35px',
-            fontFamily: 'Arial',
-            fill: '#fff'
-            }).setOrigin(0.5);
-        this.bathroomButton.setInteractive();
-        this.bathroomButton.on('pointerdown', () => {
-            this.hideButtons();
-            this.goToBathroom();
-        });
-        this.bathroomButton.on('pointerover', () => {
-            this.bathroomButtonBackground.setFillStyle(0x111111, 1.0);
-        });
-        this.bathroomButton.on('pointerout', () => {
-            this.bathroomButtonBackground.setFillStyle(0x111111, 0.6);
-        });
-        this.kitchenButtonBackground = this.add.rectangle(400, 225, 400, 60, 0x111111, 0.6);
+        this.kitchenButtonBackground = this.add.rectangle(400, 300, 400, 60, 0x111111, 0.6);
         this.kitchenButton = this.add.text(this.kitchenButtonBackground.x, this.kitchenButtonBackground.y,
-         'View her Art', {
+         'Chat with Eva', {
             fontSize: '35px',
             fontFamily: 'Arial',
             fill: '#fff'
@@ -239,65 +214,19 @@ class VisualNovelScene extends Phaser.Scene {
     }
 
     goToKitchen() {
-        if (this.teethBrushed) {
-            this.scene.start('KitchenScene');
-        } else {
-            this.dialogData = [
-                { text: "...", image: 'background4' },
-                { text: "Rian decided to start fighting today...", image: 'background4' },
-                { text: "But it failed because he didn't have enough information...", image: 'background4' },
-                { text: "...", image: 'background4' }
-            ];
-            this.dialogIndex = 0;
-            this.updateDialog();
-        }
-    }
-
-    goToBathroom() {
-        if (this.bathroomTasksCompleted) {
-            this.dialogData = [
-                { text: "Rian has already gathered all the information he can. Now it's time for chaos.", image: 'background4' }
-            ];
-            this.dialogIndex = 0;
-            this.updateDialog();
-        } else {
-            this.hideButtons();
-            this.background.setTexture('background2').setScale(1.6);
-            this.background.alpha = 0;
-            this.dialogData = [
-                { text: "...", image: 'background2' },
-                { text: "Rian decided to go listen in on the Lovers' plans.", image: 'background2' },
-                { text: "He turns on the listening tap on the venting pipe.", image: 'background2' },
-                { text: "The guards grumble about the impossible tasks.", image: 'background2' },
-                { text: "After listening, Rian flashes a salty grin at the mirror in front of him.", image: 'background2' },
-                { text: "Now he knows who will join him in rebelling, with the right words!", image: 'background2' }
-            ];
-            this.dialogIndex = 0;
-            this.teethBrushed = true;
-            this.updateDialog();
-            this.bathroomTasksCompleted = true;
-            this.tweens.add({
-              targets: this.background,
-              alpha: { from: 0, to: 1 },
-              duration: 2000,
-            });
-        }
+        this.scene.start('KitchenScene');
     }
     
     hideButtons() {
         if (this.buttonCreated) {
-            this.bathroomButton.setVisible(false);
             this.kitchenButton.setVisible(false);
-            this.bathroomButtonBackground.setVisible(false);
             this.kitchenButtonBackground.setVisible(false);
         }
     }
 
     showButtons() {
         if (this.buttonCreated) {
-            this.bathroomButton.setVisible(true);
             this.kitchenButton.setVisible(true);
-            this.bathroomButtonBackground.setVisible(true);
             this.kitchenButtonBackground.setVisible(true);
         }
     }
