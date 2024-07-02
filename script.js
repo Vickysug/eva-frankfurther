@@ -147,7 +147,7 @@ class VisualNovelScene extends Phaser.Scene {
         this.load.image('background10', 'https://play.rosebud.ai/assets/Paris train station Black and white 1950.png?DvOZ');
         this.load.image('button', 'https://play.rosebud.ai/assets/restart_icon.png?oIlO');
         this.load.audio('backgroundMusic', 'https://play.rosebud.ai/assets/Into-the-Abyss.mp3?CSyl');
-        this.load.image('startBackground', 'https://play.rosebud.ai/assets/eva.jpg?2h6X');
+        this.load.image('startBackground', 'https://play.rosebud.ai/assets/eva.crop.jpg?k1BE');
     }
 
     create() {
