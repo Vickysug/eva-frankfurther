@@ -121,14 +121,14 @@ class VisualNovelScene extends Phaser.Scene {
             { text: "Eva Frankfurther was a German-born British artist known for her depictions of the immigrant communities.", image: 'background1' },
             { text: "Eva was born into a cultured and assimilated Jewish family in Berlin in 1930.", image: 'background2' },
             { text: "Following the rise of National Socialism in Germany, she escaped to London with her family in 1939.", image: 'background3' },
-            { text: "Between 1946 and 1951 she studied at St Martin's School of Art.", image: 'background4' },
-            { text: "Some of her fellow students included Leon Kossoff and Frank Auerbach.", image: 'background5' },
+            { text: "The children, Eva and her two siblings, left Berlin six months before their parents and spent some time in Haslemere, being looked after by German refugee teachers, before their parents arrived in England during August 1939.", image: 'background4' },
+            { text: "Between 1946 and 1951 she studied at St Martin's School of Art. Some of her fellow students included Leon Kossoff and Frank Auerbach.", image: 'background5' },
             { text: "After graduating, she moved to Whitechapel in London's East End, the home for several generations of successive waves of migrant communities..", image: 'background6' },
             { text: "For the next six years, she earned her living working the evening shift as a counter-hand at Lyons Corner House and, later, in a sugar refinery.", image: 'background7' },
             { text: "Leaving herself free to paint during the day, she painted local immigrants.", image: 'background8' },
             { text: "Inspired by artists as diverse as Rembrandt, Käthe Kollwitz and Picasso, she took as her subject the ethnically diverse, largely immigrant population among whom she lived and worked.", image: 'background9' },
             { text: "Between 1948 and 1958 Frankfurther also travelled extensively in Europe, writing lively and perceptive letters home about the art and people she encountered.", image: 'background10' },
-            { text: "Eva Died in 1959 (age 29 years) in Paddington, London.", image: 'background11' }
+            { text: "She returned to London in 1959 where, suffering from depression, she took her own life. Eva Died in 1959 (age 29 years) in Paddington, London.", image: 'background11' }
 
         ];
         this.dialogIndex = 0;
@@ -138,9 +138,10 @@ class VisualNovelScene extends Phaser.Scene {
 
     preload() {
         this.load.image('background1', 'https://play.rosebud.ai/assets/eva.jpg?2h6X');
-        this.load.image('background2', 'https://play.rosebud.ai/assets/jewish-home-berlin.jpg?zxhA');
+        this.load.image('background2', 'https://play.rosebud.ai/assets/create a scene from a wealthy Jewish home in Germany 1930.png?yuJa');
         this.load.image('background3', 'https://play.rosebud.ai/assets/army tanks in germany 1940.png?ZUj5');
-        this.load.image('background4', 'https://play.rosebud.ai/assets/migration.jpg?NZuv');
+        this.load.image('background4', 'https://play.rosebud.ai/assets/refugee-children.png?JY47');
+       
         this.load.image('background5', 'https://play.rosebud.ai/assets/st-martins-school.crop.jpg?KE0K');
         this.load.image('background6', 'https://play.rosebud.ai/assets/whitchaple.jpg?PBOs');
         this.load.image('background7', 'https://play.rosebud.ai/assets/Lyons-Corner-House.crop.jpg?zFlg');
