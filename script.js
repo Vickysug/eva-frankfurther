@@ -19,7 +19,7 @@ class ChatWithEvaScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('background', 'https://play.rosebud.ai/assets/art gallery.png?gjO3');
+        this.load.image('background', 'https://play.rosebud.ai/assets/create an art gallery room full of modern life drawing sketches.png?AGw9');
         this.load.image('eva', 'https://play.rosebud.ai/assets/eva.jpg?2h6X');
     }
 
